@@ -1,0 +1,22 @@
+{
+    "id": 3,
+    "title": "This is the article title",
+    "description": "article descripition",
+    "body": "Lorem ipsum dolor sit amet, eruditi complectitur eum ex, pro ex legere nemore. Te vel graecis hendrerit, mea noluisse voluptatum cu. Modo invidunt pericula mea et, vim ad nisl nobis, veritus nusquam splendide in usu. Mel et vocent accumsan referrentur, rebum legendos mediocritatem vel ex, ex quo admodum dissentias interpretaris.Labore aperiri iracundia pri ad, dicunt detraxit honestatis ne usu, per odio idque docendi at. Eam albucius fabellas te, in brute appellantur sea, quo ut enim choro. Ius deleniti ullamcorper at. Per id cetero tritani saperet, an his dolores oporteat detraxit.Pro no congue elaboraret theophrastus. Sea te simul appareat. No quo officiis suscipiantur, id atqui saepe invidunt eum. Eu pro enim doctus facilisi, an quo tamquam signiferumque. Est eius ocurreret an, vel ut veniam necessitatibus, ei possit aperiri constituam ius.Qualisque persequeris nec ei, ut etiam ridens efficiendi vel. Nec id fabulas adversarium, et eos soluta doctus appareat. Id reque cetero has, mei eu voluptua partiendo mnesarchum. Case fuisset ei vix, inermis suscipit detraxit ad pro, iriure percipitur ne eum. Vel nisl timeam reformidans at, aeque corpora dignissim pri te.",
+    "image_url": "https://imageurl.com",
+    "author": {
+        "username": "benson",
+        "bio": "",
+        "image": ""
+    },
+    "created_at": "2019-04-23T08:20:05.150719Z",
+    "updated_at": "2019-04-23T08:20:05.150753Z",
+    "slug": "this-is-the-article-title-1",
+    "avg_rating": 0,
+    "rating_count": 0,
+    "tags": [],
+    "favorited": true,
+    "favoritesCount": 3,
+    "read_time": "1 min read",
+    "flag": ""
+}
