@@ -1,0 +1,5 @@
+[run]
+ omit =
+    */ah-cli/src/tests/*
+    */venv/*
+    setup.py
