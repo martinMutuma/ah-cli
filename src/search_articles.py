@@ -1,6 +1,7 @@
 import click
 import json as jsonPkg
 from utils import fetch, files
+import sys
 
 
 @click.command()
@@ -9,17 +10,18 @@ from utils import fetch, files
 @click.option('--csv', is_flag=True, default=False)
 @click.option('--limit', type=int, default=5)
 @click.option('--page', type=int, default=1)
+@click.argument('query', default="")
 @click.pass_context
-def list_articles(ctx, limit, export, json, csv, page):
-    """This is a command that returns a list of articles to
-    Arguments:
-        article {[string or id]} -- [unique identifier for the article]
+def search_articles(ctx, query, limit, export, json, csv, page):
+    """Search through the articles
     """
-    response = fetch.get('articles?page_size={}&page={}'.format(limit, page))
+    response = fetch.get(
+        'articles?page_size={}&title={}&page={}'.format(limit, query, page))
+
     articles = response.json().get('articles', {})
     click.echo(jsonPkg.dumps(articles, indent=4))
     if export:
-        filename = "all_articles"
+        filename = "search_"+query.replace(' ', '_')
         if json:
             files.export_to_json(filename=filename, data=articles)
         if csv:
@@ -27,5 +29,6 @@ def list_articles(ctx, limit, export, json, csv, page):
     next_q = click.prompt(
         "Use [n] to go next page or [q] to exit", default='q')
     if next_q.lower() == 'n':
-        ctx.invoke(list_articles,
+        ctx.invoke(search_articles, query=query,
                    limit=limit, export=False, page=page+1)
+    sys.exit(0)
