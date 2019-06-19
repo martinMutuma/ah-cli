@@ -14,7 +14,7 @@ class TestViewArticle(BaseTest):
     def test_list_articles(self, mocked_method):
         """ Test view article """
         mocked_method.get = self.mock_get(mocked_method, many=True)
-        result = self.runner.invoke(ah, ['list'])
+        result = self.runner.invoke(ah, ['list'], input='q')
         self.assertEqual(result.exit_code, 0)
         self.assertIn("title", result.output)
 
@@ -27,7 +27,7 @@ class TestViewArticle(BaseTest):
         mocked_method.get = self.mock_get(mocked_method,  many=True)
         with self.runner.isolated_filesystem():
             result = self.runner.invoke(
-                ah, ['list', '--export', '--json'])
+                ah, ['list', '--export', '--json'], input='q')
             self.assertEqual(result.exit_code, 0)
             self.assertTrue(os.path.isfile('./imports/all_articles.json'))
 
@@ -40,7 +40,7 @@ class TestViewArticle(BaseTest):
         mocked_method.get = self.mock_get(mocked_method,  many=True)
         with self.runner.isolated_filesystem():
             result = self.runner.invoke(
-                ah, ['list', '--export',  '--csv'])
+                ah, ['list', '--export',  '--csv'], input='q')
             self.assertEqual(result.exit_code, 0)
             self.assertTrue(os.path.isfile('./imports/all_articles.csv'))
 
@@ -53,7 +53,7 @@ class TestViewArticle(BaseTest):
         mocked_method.get = self.mock_get(mocked_method, many=True)
         with self.runner.isolated_filesystem():
             result = self.runner.invoke(
-                ah, ['list', '--export', '--csv', '--json'])
+                ah, ['list', '--export', '--csv', '--json'], input='q')
             self.assertEqual(result.exit_code, 0)
             self.assertTrue(os.path.isfile('./imports/all_articles.csv'))
             self.assertTrue(os.path.isfile('./imports/all_articles.json'))
