@@ -8,7 +8,7 @@ import os
 class TestViewArticle(BaseTest):
     """Tests for view Article endpoint consumer
     Arguments:
-        BaseTest {[unittestt.testcase]}
+        BaseTest {[unittest.TestCase]}
     """
 
     def test_view_article(self, mocked_method):
